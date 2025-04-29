@@ -1,0 +1,74 @@
+# 📁 Projet Filmo - Hébergement sur Streamlit Cloud
+
+Ce guide décrit les fichiers nécessaires pour héberger ton application Filmo sur **Streamlit Cloud**.
+
+---
+
+## 1. ✅ Structure du projet
+
+```
+filmo-chatbot/
+├── movie.py                # Ton fichier principal Streamlit (ex: app.py ou movie.py)
+├── imdbspe_fixed.csv       # Le fichier de données IMDb
+├── Filmo.png               # L'image/logo du projet
+├── requirements.txt        # Les dépendances Python
+└── README.md               # Une documentation simple pour le projet
+```
+
+---
+
+## 2. 📦 `requirements.txt`
+
+Ce fichier indique à Streamlit Cloud quelles bibliothèques installer :
+
+```txt
+streamlit
+pandas
+scikit-learn
+numpy
+base64
+speechrecognition
+pyttsx3
+textblob
+vaderSentiment
+sentence-transformers
+torch
+urllib3
+```
+
+> ⚠️ Important : `pyttsx3` et `speechrecognition` peuvent poser problème sur Streamlit Cloud car l’audio/microphone n’est pas supporté. Tu peux les commenter si besoin.
+
+---
+
+## 3. 📄 `README.md`
+
+Un fichier de présentation simple :
+
+```markdown
+# 🎬 Filmo - Movie Assistant
+
+Filmo est un assistant intelligent de recommandations de films.
+
+## Fonctionnalités principales :
+- Recommandation basée sur la description ou l’humeur
+- Analyse sémantique avec Sentence Transformers
+- Recherche par réalisateur, genre, année, etc.
+
+## Lancer l’application :
+```bash
+streamlit run movie.py
+```
+```
+
+---
+
+## 4. 🚀 Déploiement sur Streamlit Cloud
+
+1. Crée un dépôt GitHub avec tous les fichiers ci-dessus
+2. Va sur [https://streamlit.io/cloud](https://streamlit.io/cloud)
+3. Clique sur **"New app"**
+4. Connecte ton compte GitHub
+5. Sélectionne le dépôt et le fichier principal (`movie.py`)
+6. Clique sur **Deploy**
+
+Ton application sera en ligne quelques secondes après ✨
